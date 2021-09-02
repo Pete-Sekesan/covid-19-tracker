@@ -12,13 +12,7 @@ const Cards = ({
   return (
     <div className={styles.container} data-testid='chart-bar'>
       <Grid container spacing={3} justify='center'>
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={2}
-          //className={cx(styles.card, styles.infected)}
-        >
+        <Grid item component={Card} xs={12} md={2}>
           <CardContent>
             <Typography color='textSecondary' variant='h5' gutterBottom>
               Positive Cases
@@ -32,22 +26,13 @@ const Cards = ({
               />
             </Typography>
             <Typography color='textSecondary'>
-              {' '}
               {new Date(lastUpdate).toDateString()}{' '}
             </Typography>
-            <Typography variant='body2'>
-              Number of active cases of COVID-19{' '}
-            </Typography>
+            <Typography variant='body2'>Positive cases of COVID-19 </Typography>
           </CardContent>
         </Grid>
 
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={2}
-          //className={cx(styles.card, styles.deaths)}
-        >
+        <Grid item component={Card} xs={12} md={2}>
           <CardContent>
             <Typography color='textSecondary' gutterBottom variant='h5'>
               Deaths
@@ -61,22 +46,13 @@ const Cards = ({
               />
             </Typography>
             <Typography color='textSecondary'>
-              {' '}
               {new Date(lastUpdate).toDateString()}{' '}
             </Typography>
-            <Typography vatiant='body2'>
-              Number of deaths caused by COVID-19{' '}
-            </Typography>
+            <Typography variant='body2'>Deaths due to COVID-19 </Typography>
           </CardContent>
         </Grid>
 
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={2}
-          // className={cx(styles.card, styles.active)}
-        >
+        <Grid item component={Card} xs={12} md={2}>
           <CardContent>
             <Typography color='textSecondary' gutterBottom variant='h5'>
               Active Cases
@@ -93,8 +69,8 @@ const Cards = ({
               {' '}
               {new Date(lastUpdate).toDateString()}{' '}
             </Typography>
-            <Typography vatiant='body2'>
-              Number of active cases by COVID-19{' '}
+            <Typography variant='body2'>
+              Number of active cases by COVID-19.
             </Typography>
           </CardContent>
         </Grid>

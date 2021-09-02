@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NativeSelect, FormControl } from '@material-ui/core';
-import styles from './CountryPicker.module.css';
+import styles from './CountrySelector.module.css';
 import { fetchCountries } from '../../api/script';
 
-const CountryPicker = ({ handleCountryChange }) => {
+const CountrySelector = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
 
   useEffect(() => {
@@ -34,4 +34,4 @@ const CountryPicker = ({ handleCountryChange }) => {
   );
 };
 
-export default CountryPicker;
+export default CountrySelector;

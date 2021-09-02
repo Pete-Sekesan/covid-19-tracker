@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { fetchApi } from './api/script';
-import CountryPicker from './components/CountryPicker/CountryPicker';
+import CountrySelector from './components/CountrySelector/CountrySelector';
 import Graph from './components/Graph/Graph';
 import Cards from './components/Cards/Cards';
+import './App.css';
 
 export class App extends Component {
   state = {
@@ -28,8 +29,9 @@ export class App extends Component {
       <div className='div'>
         <h1> COVID-19 By The Numbers</h1>
         <Cards data={data} />
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <CountrySelector handleCountryChange={this.handleCountryChange} />
         <Graph data={data} country={country} />
+        <a href='https://peter-sekesan.dev'>Developed by Peter Sekesan</a>
       </div>
     );
   }
