@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchApi } from './api/script';
 import CountryPicker from './components/CountryPicker/CountryPicker';
-import Chart from './components/Chart/Chart';
+import Graph from './components/Graph/Graph';
 import Cards from './components/Cards/Cards';
 
 export class App extends Component {
@@ -26,10 +26,10 @@ export class App extends Component {
 
     return (
       <div className='div'>
-        <h1>Tracking Coronavirus COVID-19</h1>
+        <h1> COVID-19 By The Numbers</h1>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} />
+        <Graph data={data} country={country} />
       </div>
     );
   }
