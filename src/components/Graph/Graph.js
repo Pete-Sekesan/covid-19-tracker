@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api/script';
-import { Line, Bar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import styles from './Graph.module.css';
 
-const Graph = () => {
+const Graph = ({ data: { confirmed, deaths } }) => {
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -14,30 +14,26 @@ const Graph = () => {
     fetchAPI();
   }, []);
 
-  const lineChart = dailyData.length ? (
-    <Line
+  const barChart = dailyData.length ? (
+    <Doughnut
       data={{
-        labels: dailyData.map(({ date }) => date),
+        labels: ['Infected', 'Deaths', 'Active'],
         datasets: [
           {
-            data: dailyData.map(({ confirmed }) => confirmed),
-            label: 'Infected',
-            borderColor: '#3333ff',
-            fill: true,
-          },
-          {
-            data: dailyData.map(({ deaths }) => deaths),
-            label: 'Deaths',
-            borderColor: 'red',
-            backgroundColor: 'rgba(255, 0, 0, 0.8)',
-            fill: true,
+            label: '',
+            backgroundColor: ['#fff3b0', '#540b0e', '#e09f3e'],
+            data: [
+              confirmed.value,
+              deaths.value,
+              confirmed.value - deaths.value,
+            ],
           },
         ],
       }}
     />
   ) : null;
 
-  return <div className={styles.container}>{lineChart}</div>;
+  return <div className={styles.container}>{barChart}</div>;
 };
 
 export default Graph;
